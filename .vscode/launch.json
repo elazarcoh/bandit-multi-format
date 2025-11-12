@@ -1,0 +1,24 @@
+// bandit -c bandit.yml -r submodules/bandit-multi-format -f multi -o test
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Bandit Plugin",
+            "request": "launch",
+            "type": "debugpy",
+            "module": "bandit",
+            "args": [
+                "-r",
+                "${workspaceFolder}/example",
+                "-f",
+                "multi",
+            ],
+            "env": {
+                "BANDIT_MULTI_FORMATS": "json,yaml",
+                "BANDIT_MULTI_OUTPUT_DIR": "${workspaceFolder}/output"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+}
